@@ -1,6 +1,5 @@
 from sqlalchemy import (
     Column,
-    Index,
     Integer,
     Text,
 )
@@ -8,11 +7,10 @@ from sqlalchemy import (
 from .meta import Base
 
 
-class MyModel(Base):
-    __tablename__ = 'models'
+class Simulation(Base):
+    __tablename__ = 'simulations'
     id = Column(Integer, primary_key=True)
+    authorid = Column(Integer)
     name = Column(Text)
-    value = Column(Integer)
+    site = Column(Text)
 
-
-Index('my_index', MyModel.name, unique=True, mysql_length=255)
