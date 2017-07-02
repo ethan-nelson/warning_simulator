@@ -1,0 +1,3 @@
+[run]
+source = warning_simulator
+omit = warning_simulator/test*
