@@ -1,0 +1,93 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div id="flash_div"></div>
+<div class="flex two-1000">
+  <div>
+
+    <fieldset class="flex two">
+      <label for="select">Type:</label>
+      <select id="type" name="type">
+        <option></option>
+        <option>Severe Storm</option>
+        <option>Flash Flood</option>
+        <option>Tornado</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="flex two">
+      <label for="select">Threat:</label>
+      <select id="threat" name="threat">
+        <option val=""></option>
+        <option>Severe Wind</option>
+        <option>Severe Hail</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="flex two">
+      <label for="input">Magnitude:</label>
+      <input type="text" id="magnitude" name="magnitude" />
+    </fieldset>
+
+    <fieldset class="flex two">
+      <label for="select">Source:</label>
+      <select id="source" name="source">
+        <option></option>
+        <option>Doppler radar indication</option>
+        <option>Trained storm spotter</option>
+        <option>Law enforcement</option>
+        <option>Media</option>
+        <option>Social media</option>
+        <option>Automated weather station</option>
+      </select>
+    </fieldset>
+
+    <fieldset class="flex two">
+      <label for="input">Issue Time:</label>
+    </fieldset>
+
+    <fieldset class="flex two">
+      <label for="input">Expiration:</label>
+    </fieldset>
+
+    <fieldset class="flex four">
+      <label for="select">Movement:</label>
+      <select id="direction" name="direction">
+        <option></option>
+        <option>N</option>
+        <option>NNE</option>
+        <option>NE</option>
+        <option>ENE</option>
+        <option>E</option>
+        <option>ESE</option>
+        <option>SE</option>
+        <option>SSE</option>
+        <option>S</option>
+        <option>SSW</option>
+        <option>SW</option>
+        <option>WSW</option>
+        <option>W</option>
+        <option>WNW</option>
+        <option>NW</option>
+        <option>NNW</option>
+        <option>N</option>
+      </select>
+      @<input type="text" id="speed" name="speed /><span class="input-group-addon">kts</span>
+    </fieldset>
+
+    <fieldset>
+      Details:
+      <textarea rows="4" id="details" name="details"></textarea>
+    </fieldset>
+
+  </div>
+  <div>
+    <span id="addTime"></span>
+    <label>Draw the warning polygon:</label>
+    <div id="map" name="map" style="height: 400px; width: 475px;"></div>
+    <p class="font-smaller"><i>Map acting weird?</i>&nbsp;<button class="warning" onClick="ResetMap();">Reset Map</button> <button onClick="reloadRadar();">Refresh Radar Manually</button></p>
+  </div>
+</div>
+</div>
+
+{% endblock content %}

@@ -26,6 +26,9 @@ p {
 .font-bold {
   font-weight: 700;
 }
+.font-smaller {
+  font-size: 12px;
+}
 .starter-template {
   margin-top: 250px;
 }
